@@ -27,6 +27,12 @@ export class AppComponent implements OnInit {
     )
   }
 
+  onDelete(item: any){
+    this.appService.deletePost(item).pipe(take(1)).subscribe((res)=>
+      console.log(res)
+    )
+  }
+
 }
 
 

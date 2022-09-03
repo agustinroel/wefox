@@ -1,5 +1,6 @@
 <div class="container">
   <img src="../assets/img/wefoxlogo.png" alt="wefoxlogo" class="logo">
+  <button mat-raised-button class="add-button" color="primary" >Add a new post</button>
   <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
 
     <!-- Id Column -->
@@ -37,7 +38,7 @@
     <ng-container matColumnDef="actions">
       <th mat-header-cell *matHeaderCellDef> Actions </th>
       <td mat-cell *matCellDef="let element">
-        <mat-icon>delete</mat-icon>
+        <mat-icon (click)="onDelete(element)">delete</mat-icon>
       </td>
     </ng-container>
 

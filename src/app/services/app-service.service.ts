@@ -14,5 +14,9 @@ postEndpoint = '/api/v1/posts';
   listPosts(): Observable<any>{
     return this.http.get(`http://localhost:3000/api/v1/posts`)
   }
+
+  deletePost(item: any): Observable<any>{
+    return this.http.delete(`http://localhost:3000/api/v1/posts/`+`${item.id}`)
+  }
 }
 
