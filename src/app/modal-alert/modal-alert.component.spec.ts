@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { MatDialogModule, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 import { ModalAlertComponent } from './modal-alert.component';
 
@@ -8,7 +9,14 @@ describe('ModalAlertComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ModalAlertComponent ]
+      imports: [MatDialogModule],
+      declarations: [ ModalAlertComponent ],
+      providers: [
+        {
+          provide: MatDialogRef,
+          useValue: {}
+        },
+        {provide:MAT_DIALOG_DATA,useValue:{}}]
     })
     .compileComponents();
   });

@@ -38,7 +38,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
     MatIconModule,
     BrowserAnimationsModule
   ],
-  providers: [HttpClient],
+  providers: [HttpClientModule, HttpClient],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

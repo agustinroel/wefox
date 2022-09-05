@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { MatDialogModule, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 import { ModalEditComponent } from './modal-edit.component';
 
@@ -8,7 +9,14 @@ describe('ModalEditComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ModalEditComponent ]
+      imports: [MatDialogModule],
+      declarations: [ ModalEditComponent ],
+      providers: [
+        {
+          provide: MatDialogRef,
+          useValue: {}
+        },
+        {provide:MAT_DIALOG_DATA,useValue:{}}]
     })
     .compileComponents();
   });
