@@ -13,18 +13,22 @@ import { ModalEditComponent } from './modal-edit/modal-edit.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { ModalShowComponent } from './modal-show/modal-show.component';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 @NgModule({
   declarations: [
     AppComponent,
     ModalAlertComponent,
-    ModalEditComponent
+    ModalEditComponent,
+    ModalShowComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     MatTableModule, 
     MatButtonModule,
+    MatTooltipModule,
     FormsModule,
     MatInputModule,
     ReactiveFormsModule,

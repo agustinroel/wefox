@@ -10,6 +10,7 @@ td {
 
 table {
   width: 100%;
+  margin-bottom: 3em;
 }
 
 mat-icon {
@@ -21,7 +22,7 @@ mat-icon {
   width: 250px;
   margin-left: auto;
   margin-right: auto;
-
+  filter: drop-shadow(5px 10px 4px #95959a);
 }
 
 .add-button{

@@ -1,0 +1,18 @@
+<div class="container">
+    <h1> {{ data.element.title}} </h1>
+    <mat-dialog-content>
+        <div class="info">
+            <h4>{{ data.element.content}}</h4>
+            <p><b>Latitude:</b> {{ data.element.lat }}</p>
+            <p><b>Longitude:</b> {{ data.element.long }}</p>
+        </div>
+        <img class="image" [src]="data.element.image_url" alt="post-image">
+
+    </mat-dialog-content>
+</div>
+<mat-dialog-actions align="end">
+  <button mat-raised-button color="primary" *ngIf="showCancelButton" [mat-dialog-close]="confirm"
+    class="button_custom button_custom_confirm">
+    {{ 'Close' }}
+  </button>
+</mat-dialog-actions>

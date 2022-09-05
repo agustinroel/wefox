@@ -5,6 +5,7 @@ import { filter, mergeMap, Subject, take, takeUntil } from 'rxjs';
 import { Posts } from '../assets/posts.interface';
 import { ModalAlertComponent } from './modal-alert/modal-alert.component';
 import { ModalEditComponent } from './modal-edit/modal-edit.component';
+import { ModalShowComponent } from './modal-show/modal-show.component';
 import { AppServiceService } from './services/app-service.service';
 import { ComunicationComponentService } from './services/comunication-component/comunication-component.service';
 
@@ -69,6 +70,19 @@ export class AppComponent implements OnInit {
     })
   }
 
+  onShow(element: any){
+    const showPost = this.dialog.open(ModalShowComponent, {
+      height: '90%',
+      width: '90%',
+      data: {
+        isEdit: false,
+        element: element,
+        showCancelButton: true
+      },
+      disableClose: false
+    })
+  }
+
   onEdit(element: any){
     const editPost = this.dialog.open(ModalEditComponent, {
       height: '60%',
@@ -117,7 +131,7 @@ export class AppComponent implements OnInit {
 
     deleteDialog.afterClosed().subscribe(result => {
       console.log(result)
-      if (result !== undefined) {
+      if (result === true) {
          this.appService.deletePost(item).pipe(take(1)).subscribe((res) =>
          this.dataSource._updateChangeSubscription()
         ) 
